@@ -22,7 +22,15 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 * User-friendly interface and display.
 
 ## :question: How-To
-To use this program, simply download the 'sharing schedule generator.jar' or 'sharingschedulegenerator.exe'
+To use this program, simply download the `Sharing Schedule Generator.jar` or `SharingScheduleGenerator.exe`. Your computer may tell you that the file is dangerous but trust me it's not (I swear I'm not trying to hack your computer), I just haven't found a way to certify or sign my program to make it accepted by windows security yet. 
+
+Most of the functions of this generator are quite self-explanatory, but if you are stuck or confused, here is a quick 3 step guideline on how to create your first sharing schedule!
+
+**Step 1:** Create at least 3 groups under “Group Settings” OR directly enable one of the built-in presets* under “Event Settings”.
+
+**Step 2:** Pick an event name, date, and 3 target groups under “Event Settings”. Target groups are groups that your event will be shared with the most (higher frequency). 
+
+**Step 3:** Click “Generate Schedule” under “Event Settings” and voila! Your generated schedule can be viewed under “Schedule”.
 
 ## :bulb: Origins 
 During my time as one of the marketing directors for UBC BizTech (the largest technology club at UBC), one of our main event marketing strategies is to share our events to different Facebook groups. In order to make sure our events receive enough exposure without spamming and annoying its members, we usually create a sharing schedule, detailing which Facebook groups we will share our events to on which day. 
@@ -34,3 +42,6 @@ Without sacrificing the marketing strategies embedded inside these schedules (su
 Although the current program is very tailored towards UBC BizTech, I believe that other clubs or organizations are still be able to benefit from its use. The group settings feature allows custom groups to be added, and with just a few clicks, a sharing schedule is generated and you are ready to start sharing!
 
 Additionally, there are several new features that I want to add in the future in order to enhance this program’s customizability and accessibility, so stay tuned!
+
+## More Questions?
+If you have any further questions or found any bugs to report, please feel free to contact me [here!](scheng.ca/#contact)
