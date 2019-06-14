@@ -21,7 +21,7 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 
 * User-friendly interface and display.
 
-## :question: How-To
+## :question: How-To-Use
 To use this program, simply download the `Sharing Schedule Generator.jar` or `SharingScheduleGenerator.exe`. Your computer may tell you that the file is dangerous but trust me it's not (I swear I'm not trying to hack your computer), I just haven't found a way to certify or sign my program to make it accepted by windows security yet. 
 
 Most of the functions of this generator are quite self-explanatory, but if you are stuck or confused, here is a quick 3 step guideline on how to create your first sharing schedule!
@@ -33,7 +33,7 @@ Most of the functions of this generator are quite self-explanatory, but if you a
 **Step 3:** Click “Generate Schedule” under “Event Settings” and voila! Your generated schedule can be viewed under “Schedule”.
 
 ## :bulb: Origins 
-During my time as one of the marketing directors for UBC BizTech (the largest technology club at UBC), one of our main event marketing strategies is to share our events to different Facebook groups. In order to make sure our events receive enough exposure without spamming and annoying its members, we usually create a sharing schedule, detailing which Facebook groups we will share our events to on which day. 
+During my time as one of the marketing directors for UBC BizTech (the largest technology club at the University of British Columbia), one of our main event marketing strategies is to share our events to different Facebook groups. In order to make sure our events receive enough exposure without spamming and annoying its members, we usually create a sharing schedule, detailing which Facebook groups we will share our events to on which day. 
 
 However, the creation of these schedules is a very tedious and boring task. After having to go through such a dull process myself, I noticed that a lot of the steps involved could be automated. Instead of building these schedules myself, I decided that I was going to build a program that generates these schedules automatically, with a built in marketing algorithm and all. And voila! The sharing schedule generator was born.
 
