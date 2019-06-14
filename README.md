@@ -14,9 +14,8 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 * Customizable groups 
 
 * Built-in marketing strategies such as:
-
-1. Sufficient day gaps between sharing your event with the same group in order to avoid spamming and annoying group members
-2. Customizable target groups, allowing you to maximize your event exposure with the people that you want your event to attract the most
-3. More shares on days with more active users. 
+    - Sufficient day gaps between sharing your event with the same group in order to avoid spamming and annoying group members
+    - Customizable target groups, allowing you to maximize your event exposure with the people that you want your event to attract the most
+    - More shares on days with more active users. 
 
 * User-friendly interface and display. 
