@@ -43,5 +43,5 @@ Although the current program is very tailored towards UBC BizTech, I believe tha
 
 Additionally, there are several new features that I want to add in the future in order to enhance this program’s customizability and accessibility, so stay tuned!
 
-## More Questions?
-If you have any further questions or found any bugs to report, please feel free to contact me [here!](scheng.ca/#contact)
+## :wave: More Questions?
+If you have any further questions or found any bugs to report, please feel free to contact me [here!](http://scheng.ca/#contact)
