@@ -1,5 +1,3 @@
-package schedule_generator;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -353,7 +351,6 @@ public class GUI {
 					}
 							
 					// If group name is distinct, add the group, else report that it is not distinct
-							
 					if (distinct)
 					{
 						// Add the group
@@ -566,7 +563,7 @@ public class GUI {
 		for (int x=0 ;x<scheduleTable.getColumnCount(); x++)
 		{
 			scheduleTable.getColumnModel().getColumn(x).setCellRenderer( centerRenderer );
-	    } 
+		} 
 		
 		scrollPane.setViewportView(scheduleTable);
 		
@@ -679,7 +676,6 @@ public class GUI {
 		
 		// THE IMPORTANT BUTTON THAT GENERATES THE SCHEDULE
 		// -------------------------------------------
-		
 		btnGenerateSchedule.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
