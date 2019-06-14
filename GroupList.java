@@ -7,8 +7,6 @@ public class GroupList
 	ArrayList<Group> all = new ArrayList<Group>();
 	ArrayList<Group> topTier = new ArrayList<Group>();
 	ArrayList<Group> midTier = new ArrayList<Group>();
-	//ArrayList<Group> botTier = new ArrayList<Group>();
-	//ArrayList<Group> allUnordered = new ArrayList<Group>();
 	
 	public GroupList()
 	{
@@ -27,10 +25,6 @@ public class GroupList
 			case "N":
 				midTier.add(newGroup);
 				break;
-			/*
-			case "C":
-				botTier.add(newGroup);
-				break; */
 		}
 	}
 	
@@ -39,7 +33,6 @@ public class GroupList
 		all.clear();
 		all.addAll(topTier);
 		all.addAll(midTier);
-		//all.addAll(botTier);
 	}
 	
 	public void deleteAll()
@@ -47,7 +40,6 @@ public class GroupList
 		all.clear();
 		topTier.clear();
 		midTier.clear();
-		//botTier.clear();
 	}
 	
 }
