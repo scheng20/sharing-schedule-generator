@@ -38,9 +38,6 @@ public class Day
 		
 		// Decrease the amount of shares left for this day
 		shareSlots --;
-		
-		// Reset the days remaining until next share value of the group
-		//group.daysRemainingUntilNextShare = 2;
 		group.shareTimes --;
 		
 	}
