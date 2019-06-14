@@ -13,6 +13,7 @@ public class ScheduleCreator
 		
 	}
 	
+	// Functions
 	public boolean sufficientGap(Group group, ArrayList<Day> Week, int dayCount)
 	{
 		Boolean result = false;
@@ -20,7 +21,6 @@ public class ScheduleCreator
 		// If the dayCount is between 2 and 4, then check both ways
 		if (dayCount >=2 && dayCount <= 4)
 		{
-			// Again... does this work?
 			result = (CheckForwardTwo(group, Week, dayCount) && CheckBackTwo(group, Week, dayCount));
 		}
 		// If the dayCount is 1, then check the past 1 day and check forward 2 days
@@ -107,7 +107,6 @@ public class ScheduleCreator
 		Day pastDay = Week.get(dayCount - 1);
 		ArrayList<String> sharedGroups = (ArrayList<String>) pastDay.sharedGroups;
 		
-		// Hmmm can we just leave this as is? YES WE CAN!
 		result = !sharedGroups.contains(currentGroupname);
 
 		return result;
@@ -121,7 +120,6 @@ public class ScheduleCreator
 		Day nextDay = Week.get(dayCount + 1);
 		ArrayList<String> sharedGroups = (ArrayList<String>) nextDay.sharedGroups;
 		
-		// Hmmm can we just leave this as is?
 		result = !sharedGroups.contains(currentGroupname);
 
 		return result;
@@ -134,27 +132,15 @@ public class ScheduleCreator
 	{
 		schedule = Week;
 		
-		// Clear any existing groups in the schedule
-		/*
-		for (int i = 0; i < schedule.size(); i++)
-		{
-			Day currentDay = schedule.get(i);
-			currentDay.deleteAllGroups();
-		}*/
-		
 		// Get the first day
 		Day firstDay = schedule.get(0);
 		
-		// STEP 4:
-		// If the first day is a hot day
+		// If the first day is a "hot" day
 		if (firstDay.hotDay)
 		{
-			// OLD: find 2 top tier groups and 2 mid tier groups to share
-			
-			// NEW: find 1 top tier groups and 2 mid tier groups to share
+			// Find 1 top tier groups and 2 mid tier groups to share
 			
 			firstDay.addGroup(Groups.topTier.get(0));
-			//firstDay.addGroup(Groups.topTier.get(1));
 			
 			for (int i = 0; i < Groups.midTier.size(); i++)
 			{
@@ -167,12 +153,6 @@ public class ScheduleCreator
 			}
 			
 			// find the next "hot" day (within at least a 2 day gap), and share
-			// OLD:
-			// 1 remaining top tier group
-			// 1 of already shared top tier groups
-			// 2 different mid tier groups
-			
-			// NEW:
 			// 2 remaining top tier groups
 			// 1 mid tier group
 			
@@ -200,10 +180,9 @@ public class ScheduleCreator
 			}
 			
 		}
-		else //if the first day is NOT a hot day
+		else //if the first day is NOT a "hot" day
 		{
-			// OLD: Add 1 top tier group, and two mid tier groups
-			// NEW: Add 1 top tier group, and 1 mid tier group
+			// Add 1 top tier group, and 1 mid tier group
 			firstDay.addGroup(Groups.topTier.get(0));
 			
 			for (int i = 0; i < Groups.midTier.size(); i++)
@@ -216,10 +195,8 @@ public class ScheduleCreator
 				}
 			}
 			
-			//Find the next hot day and share
-			// OLD: 2 remaining two tier groups, 2 mid tier groups
-			
-			// NEW: 2 remaining top tier groups, 1 mid tier group
+			// Find the next "hot" day and share	
+			// 2 remaining top tier groups, 1 mid tier group
 			
 			int cont = 0;
 			
@@ -242,12 +219,6 @@ public class ScheduleCreator
 						{
 								currentD.addGroup(currentG);
 						}
-
-						/*
-						if (currentD.canAdd(currentG))
-						{
-							currentD.addGroup(currentG);
-						}*/
 					}
 					
 					cont = i;
@@ -256,12 +227,7 @@ public class ScheduleCreator
 				}
 			}
 			
-			// Find the next hot day (within a two day gap) and share
-			// OLD:
-			// First shared top tier group, other top tier group
-			// two other mid tier groups
-			
-			// NEW:
+			// Find the next "hot" day (within a two day gap) and share
 			// First shared top tier group, other top tier group
 			// 1 other mid tier group
 			
@@ -290,7 +256,6 @@ public class ScheduleCreator
 			
 		}
 		
-		// STEP 5:
 		// DONE WITH ALL THE FIRST DAY AND HOT DAY STUFF FROM HERE ON NOW
 		// Just fill the rest in now
 		
@@ -298,46 +263,17 @@ public class ScheduleCreator
 		{
 			Day currentDay = schedule.get(i);
 			
-			// Cycle through the current day's added list of groups and set their
-			// daysRemainingUntilNextShare = 2
-			
-			/*
-			for (int k = 0; k < currentDay.addedGroups.size(); k++)
-			{
-				Group currentAddedGroup = currentDay.addedGroups.get(k);
-				
-				//currentAddedGroup.daysRemainingUntilNextShare = 2;
-			}*/
-			
 			for (int j = 0; j < Groups.all.size(); j++)
 			{
 				Group currentGroup = Groups.all.get(j);
 				
-				// ANOTHER KEY POINT HERE!!! Since the days start at 0, its impossible to look back
+				// ANOTHER KEY POINT TO WATCH OUT FOR HERE!!! Since the days start at 0, its impossible to look back
 				
 				if (currentDay.canAdd(currentGroup) && sufficientGap(currentGroup, schedule, i))
 				{
 						currentDay.addGroup(currentGroup);
 				}
-
-				
 			}
-			
-			/*
-			for (int k = 0; k < currentDay.addedGroups.size(); k++)
-			{
-				Group currentAddedGroup = currentDay.addedGroups.get(k);
-				
-				//currentAddedGroup.daysRemainingUntilNextShare = 2;
-			} */
-			
-			//update all groups for the day
-			/*
-			for (int k = 0; k < Groups.all.size(); k++)
-			{
-				Group currentGroup = Groups.all.get(k);
-				currentGroup.update();
-			} */
 		}
 		
 		return schedule;
