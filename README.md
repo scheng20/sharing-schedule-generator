@@ -11,11 +11,22 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 * Automatically generates a 7-day marketing schedule detailing which groups you should share your event with on which day.
     - Currently the program has a standard 7 days of marketing (prior to the event day). This time length is what we have found to be the most effective for our BizTech events.
 
-* Customizable groups 
+* Customizable groups, allowing you add and delete your own groups.
 
 * Built-in marketing strategies such as:
-    - Sufficient day gaps between sharing your event with the same group in order to avoid spamming and annoying group members
-    - Customizable target groups, allowing you to maximize your event exposure with the people that you want your event to attract the most
+    - Sufficient day gaps between sharing your event with the same group in order to avoid spamming and annoying group members.
+    - Customizable target groups, allowing you to maximize your event exposure with the people that you want your event to attract the most.
     - More shares on days with more active users. 
 
-* User-friendly interface and display. 
+* User-friendly interface and display.
+
+## Origins
+During my time as one of the marketing directors for UBC BizTech (the largest technology club at UBC), one of our main event marketing strategies is to share our events to different Facebook groups. In order to make sure our events receive enough exposure without spamming and annoying its members, we usually create a sharing schedule, detailing which Facebook groups we will share our events to on which day. 
+
+However, the creation of these schedules is a very tedious and boring task. After having to go through such a dull process myself, I noticed that a lot of the steps involved could be automated. Instead of building these schedules myself, I decided that I was going to build a program that generates these schedules automatically, with a built in marketing algorithm and all. And voila! The sharing schedule generator was born.
+
+Without sacrificing the marketing strategies embedded inside these schedules (such as selecting different target groups, and sharing more on days where our Facebook users are most active), I was able to build a program that automatically generates a sharing schedule given a list of groups and an event date. 
+
+Although the current program is very tailored towards UBC BizTech, I believe that other clubs or organizations are still be able to benefit from its use. The group settings feature allows custom groups to be added, and with just a few clicks, a sharing schedule is generated and you are ready to start sharing!
+
+Additionally, there are several new features that I want to add in the future in order to enhance this program’s customizability and accessibility, so stay tuned!
