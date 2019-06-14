@@ -9,7 +9,7 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 
 ## Features
 * Automatically generates a 7-day marketing schedule detailing which groups you should share your event with on which day.
-       Currently the program has a standard 7 days of marketing (prior to the event day). This time length is what we have found to be the most effective for our BizTech events.
+    - Currently the program has a standard 7 days of marketing (prior to the event day). This time length is what we have found to be the most effective for our BizTech events.
 
 * Customizable groups 
 
