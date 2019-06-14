@@ -42,6 +42,7 @@ public class Processor
 		
 	}
 	
+	// Functions
 	public void generateWeek()
 	{
 		marketingWeek = weekGenerator.generateWeek(eventDate);
