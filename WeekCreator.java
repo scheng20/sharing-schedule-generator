@@ -5,11 +5,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class WeekCreator 
-{
-	// Initialize some properties
-	//LocalDate eventDate;
-	
-	
+{	
 	//Constructor
 	public WeekCreator()
 	{
