@@ -1,2 +1,2 @@
-# sharing-schedule-generator
-A marketing tool designed to help effectively share your event with different groups. 
+# Sharing Shedule Generator
+A marketing tool designed to help you effectively share your event with different groups. 
