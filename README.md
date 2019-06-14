@@ -2,13 +2,13 @@
 A marketing tool designed to help you effectively share your event with different groups. 
 Built using Java.
 
-## Introduction :star:
+## :star: Introduction 
 Thank you for downloading and using this sharing schedule generator!
 
 This program is designed to be used as a marketing tool for advertising events on Facebook. One of the ways to maximize the exposure of your event is to share it across different Facebook groups. However, if you share your event too often within the same group, its group members may get annoyed and form a negative impression on your event. The goal of this program is 
 to automatically create a sharing schedule, so you can avoid oversharing and worrying about when to share your event and with which group. Even though this program was originally designed for advertising through Facebook, it can also be used for different platforms as long as the same logic applies (advertising your event to different groups of people). 
 
-## Features :pushpin:
+## :pushpin: Features 
 * Automatically generates a 7-day marketing schedule detailing which groups you should share your event with on which day.
     - Currently the program has a standard 7 days of marketing (prior to the event day). This time length is what we have found to be the most effective for our BizTech events.
 
@@ -21,7 +21,10 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 
 * User-friendly interface and display.
 
-## Origins :bulb:
+## :question: How-To
+To use this program, simply download the 'sharing schedule generator.jar' or 'sharingschedulegenerator.exe'
+
+## :bulb: Origins 
 During my time as one of the marketing directors for UBC BizTech (the largest technology club at UBC), one of our main event marketing strategies is to share our events to different Facebook groups. In order to make sure our events receive enough exposure without spamming and annoying its members, we usually create a sharing schedule, detailing which Facebook groups we will share our events to on which day. 
 
 However, the creation of these schedules is a very tedious and boring task. After having to go through such a dull process myself, I noticed that a lot of the steps involved could be automated. Instead of building these schedules myself, I decided that I was going to build a program that generates these schedules automatically, with a built in marketing algorithm and all. And voila! The sharing schedule generator was born.
