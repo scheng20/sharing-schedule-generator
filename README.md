@@ -6,6 +6,8 @@ Built using Java.
 
 <img src="screenshots/EventSettings2.PNG" width="285" title="Screenshot of Website"> <img src="screenshots/GroupSettings2.PNG" width="285" title="Screenshot of Website"> <img src="screenshots/Schedule2.PNG" width="285" title="Screenshot of Website">
 
+[Download This Program Here](https://www.dropbox.com/s/uq6aao92wstuu13/SharingScheduleGenerator.exe?dl=0)
+
 ## :star: Introduction 
 Thank you for downloading and using this sharing schedule generator!
 
@@ -26,7 +28,7 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 * User-friendly interface and display.
 
 ## :question: How-To-Use
-To use this program, simply download the `Sharing Schedule Generator.jar` or `SharingScheduleGenerator.exe`. Your computer may tell you that the file is dangerous but trust me it's not (I swear I'm not trying to hack your computer), I just haven't found a way to certify or sign my program to make it accepted by windows security yet. 
+To use this program, simply download it [here](https://www.dropbox.com/s/uq6aao92wstuu13/SharingScheduleGenerator.exe?dl=0). Your computer may tell you that the file is dangerous but trust me it's not (I swear I'm not trying to hack your computer), I just haven't found a way to certify or sign my program to make it accepted by windows security yet. 
 
 Most of the functions of this generator are quite self-explanatory, but if you are stuck or confused, here is a quick 3 step guideline on how to create your first sharing schedule!
 
