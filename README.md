@@ -1,5 +1,5 @@
 # Sharing Shedule Generator
-A marketing tool designed to help you effectively share your event with different groups. 
+A marketing tool designed to help effectively share events with different groups on social media.
 Built using Java.
 
 <img src="screenshots/EventSettings1.PNG" width="285" title="Empty Event Settings"> <img src="screenshots/GroupSettings1.PNG" width="285" title="Empty Group Settings"> <img src="screenshots/Schedule1.PNG" width="285" title="Empty Schedule Output">
