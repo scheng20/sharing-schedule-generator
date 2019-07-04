@@ -1,16 +1,14 @@
-package schedule_generator;
+package Models;
 
-import java.util.ArrayList;
-
-public class Group 
+public class Group
 {
 	//Initialize Some Properties
-	String name;
-	String faculty;
-	String year;
-	String tier;
+	public String name;
+	public String faculty;
+	public String year;
+	public String tier;
 	
-	int shareTimes = 0;
+	public int shareTimes = 0;
 	
 	//Constructor
 	public Group (String Name, String Faculty, String Year, String Tier)
