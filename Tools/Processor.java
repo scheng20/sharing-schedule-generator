@@ -1,40 +1,41 @@
-package schedule_generator;
+package Tools;
 
-import java.text.SimpleDateFormat;
+import Models.Day;
+import Models.Group;
+import Models.GroupList;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Processor 
 {
 	// The Event Name
-	String eventName = "";
+	public String eventName = "";
 	
 	// The Event Date
-	LocalDate eventDate = LocalDate.of(2019,Month.OCTOBER, 15);
+	public LocalDate eventDate = LocalDate.of(2019,Month.OCTOBER, 15);
 	
 	// Create the marketing week
-	ArrayList<Day> marketingWeek = new ArrayList<Day>();
+	public ArrayList<Day> marketingWeek = new ArrayList<Day>();
 	
 	// Instantiate a special list used to store the groups
-	GroupList list = new GroupList();
+	public GroupList list = new GroupList();
 	
 	// Instantiate a new weekGenerator
-	WeekCreator weekGenerator = new WeekCreator();
+	public WeekCreator weekGenerator = new WeekCreator();
 	
 	// Instantiate a scheduleBuilder
-	ScheduleCreator builder = new ScheduleCreator();
+	public ScheduleCreator builder = new ScheduleCreator();
 	
 	// Statistics
-	int totalToShare = 0;
-	int totalSlots = 0; 
-	int actualShares = 0;
+	public int totalToShare = 0;
+	public int totalSlots = 0;
+	public int actualShares = 0;
 	
 	// Group Presets
-	Boolean useBizTech2019_2020Preset = false;
+	public Boolean useBizTech2019_2020Preset = false;
 	
 	// Constructor
 	public Processor()
