@@ -1,4 +1,4 @@
-package schedule_generator;
+package Models;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -6,14 +6,14 @@ import java.util.*;
 public class Day 
 {
 	//Initialize Some Properties
-	LocalDate date;
-	String dayofWeek;
-	Boolean hotDay = false;
-	int shareSlots = 0;
-	List<String> sharedGroups = new ArrayList<String>();
-	List<String> sharedFaculties = new ArrayList<String>();
-	List<String> sharedYears = new ArrayList<String>();
-	List<Group> addedGroups = new ArrayList<Group>();
+	public LocalDate date;
+	public String dayofWeek;
+	public Boolean hotDay = false;
+	public int shareSlots = 0;
+	public List<String> sharedGroups = new ArrayList<String>();
+	public List<String> sharedFaculties = new ArrayList<String>();
+	public List<String> sharedYears = new ArrayList<String>();
+	public List<Group> addedGroups = new ArrayList<Group>();
 	
 	//Constructor
 	public Day (LocalDate Date, Boolean Hot, int Slots)
