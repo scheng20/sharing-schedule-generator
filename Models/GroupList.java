@@ -1,12 +1,12 @@
-package schedule_generator;
+package Models;
 
 import java.util.*;
 
 public class GroupList 
 {
-	ArrayList<Group> all = new ArrayList<Group>();
-	ArrayList<Group> topTier = new ArrayList<Group>();
-	ArrayList<Group> midTier = new ArrayList<Group>();
+	public ArrayList<Group> all = new ArrayList<Group>();
+	public ArrayList<Group> topTier = new ArrayList<Group>();
+	public ArrayList<Group> midTier = new ArrayList<Group>();
 	
 	public GroupList()
 	{
