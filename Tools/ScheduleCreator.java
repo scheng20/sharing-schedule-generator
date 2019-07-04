@@ -1,11 +1,15 @@
-package schedule_generator;
+package Tools;
 
-import java.util.*;
+import Models.Day;
+import Models.Group;
+import Models.GroupList;
+
+import java.util.ArrayList;
 
 public class ScheduleCreator 
 {
 	// Initialize some properties
-	ArrayList<Day> schedule = new ArrayList<Day>();
+	public ArrayList<Day> schedule = new ArrayList<Day>();
 	
 	//Constructor
 	public ScheduleCreator()
