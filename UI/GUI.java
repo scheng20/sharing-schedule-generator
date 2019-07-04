@@ -1,40 +1,18 @@
-import java.awt.EventQueue;
+package UI;
 
-import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
+import Models.Group;
+import Tools.Processor;
+import com.toedter.calendar.JDateChooser;
 
-import javax.swing.JPanel;
-import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JDateChooser;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JCheckBox;
-import javax.swing.JTextPane;
-import java.awt.Toolkit;
 
 
 public class GUI {
