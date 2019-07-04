@@ -1,8 +1,10 @@
-package schedule_generator;
+package Tools;
+
+import Models.Day;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
 
 public class WeekCreator 
 {	
