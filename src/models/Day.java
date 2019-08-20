@@ -31,9 +31,9 @@ public class Day
 	{
 
 		addedGroups.add(group);
-		sharedGroups.add(group.name);
-		sharedFaculties.add(group.faculty);
-		sharedYears.add(group.year);
+		sharedGroups.add(group.getName());
+		sharedFaculties.add(group.getFaculty());
+		sharedYears.add(group.getYear());
 		
 		// Decrease the amount of shares left for this day
 		shareSlots --;
@@ -44,10 +44,10 @@ public class Day
 	public boolean canAdd(Group group)
 	{
 		// Count how many appearances of this group's faculty are in this day
-        int sameFaculty = countAppearances(group.faculty, sharedFaculties);
+        int sameFaculty = countAppearances(group.getFaculty(), sharedFaculties);
 		
 		// Count how many appearances of this group's year are in this day
-		int sameYear = countAppearances(group.year, sharedYears);
+		int sameYear = countAppearances(group.getYear(), sharedYears);
 		
 		return (shareSlots > 0 && sameFaculty < 2 && sameYear < 1 && group.shareTimes > 0);
 	}

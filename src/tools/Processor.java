@@ -215,11 +215,11 @@ public class Processor
 		String[] result = {};
 		
 		Group currentGroup = list.all.get(row);
-		alist.add(currentGroup.name);
-		alist.add(currentGroup.faculty);
-		alist.add(currentGroup.year);
+		alist.add(currentGroup.getName());
+		alist.add(currentGroup.getFaculty());
+		alist.add(currentGroup.getYear());
 		
-		if (currentGroup.tier == "T")
+		if (currentGroup.getTier() == "T")
 		{
 			alist.add("Yes");
 		}
@@ -243,7 +243,7 @@ public class Processor
 		for (int i = 0; i < list.all.size(); i ++)
 		{
 			Group currentGroup = list.all.get(i);
-			alist.add(currentGroup.name);
+			alist.add(currentGroup.getName());
 		}
 		
 		result = alist.toArray(new String[alist.size()]);  
@@ -259,7 +259,7 @@ public class Processor
 		{
 			Group currentGroup = list.topTier.get(i);
 			currentGroup.shareTimes = 1;
-			currentGroup.tier = "N";
+			currentGroup.setTier("N");
 			list.midTier.add(currentGroup);
 		}
 		
@@ -274,9 +274,9 @@ public class Processor
 		{
 			Group currentGroup = list.all.get(i);
 			
-			if (currentGroup.name.equalsIgnoreCase(GroupName))
+			if (currentGroup.getName().equalsIgnoreCase(GroupName))
 			{
-				currentGroup.tier = "T";
+				currentGroup.setTier("T");
 				currentGroup.shareTimes = 2;
 				list.topTier.add(currentGroup);
 				list.midTier.remove(currentGroup);

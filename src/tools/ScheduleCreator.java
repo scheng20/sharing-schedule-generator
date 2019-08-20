@@ -54,7 +54,7 @@ public class ScheduleCreator
 	// Check if given group has been shared within the next 2 days
 	public Boolean CheckForwardTwo (Group group, ArrayList<Day> Week, int dayCount)
 	{
-		String currentGroupname = group.name;
+		String currentGroupname = group.getName();
 		Boolean result = false;
 		
 		for (int i = dayCount; i <= (dayCount + 2); i++)
@@ -80,7 +80,7 @@ public class ScheduleCreator
 	// Check if given group has been shared within the past 2 days
 	public Boolean CheckBackTwo (Group group, ArrayList<Day> Week, int dayCount)
 	{
-		String currentGroupname = group.name;
+		String currentGroupname = group.getName();
 		Boolean result = false;
 		
 		for (int i = (dayCount - 2); i <= dayCount; i++)
@@ -105,7 +105,7 @@ public class ScheduleCreator
 	
 	public Boolean CheckBackOne (Group group, ArrayList<Day> Week, int dayCount)
 	{
-		String currentGroupname = group.name;
+		String currentGroupname = group.getName();
 		Boolean result = false;
 		
 		Day pastDay = Week.get(dayCount - 1);
@@ -118,7 +118,7 @@ public class ScheduleCreator
 	
 	public Boolean CheckForwardOne (Group group, ArrayList<Day> Week, int dayCount)
 	{
-		String currentGroupname = group.name;
+		String currentGroupname = group.getName();
 		Boolean result = false;
 		
 		Day nextDay = Week.get(dayCount + 1);

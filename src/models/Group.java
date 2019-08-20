@@ -2,15 +2,15 @@ package models;
 
 public class Group
 {
-	//Initialize Some Properties
-	public String name;
-	public String faculty;
-	public String year;
-	public String tier;
+    // ------------------------------- FIELDS --------------------------------
+	private String name;
+	private String faculty;
+	private String year;
+	private String tier;
 	
 	public int shareTimes = 0;
-	
-	//Constructor
+
+    // ----------------------------- CONSTRUCTOR -----------------------------
 	public Group (String Name, String Faculty, String Year, String Tier)
 	{
 		name = Name;
@@ -29,7 +29,8 @@ public class Group
 				break;
 		}
 	}
-	
+
+    // ------------------------------ FUNCTIONS ------------------------------
 	public void resetShareTimes()
 	{
 		if (tier.equalsIgnoreCase("T"))
@@ -41,4 +42,26 @@ public class Group
 			shareTimes = 1;
 		}
 	}
+
+    // ------------------------- GETTERS AND SETTERS -------------------------
+
+    public String getName() {
+	    return name;
+    }
+
+    public String getFaculty() {
+	    return faculty;
+    }
+
+    public String getYear() {
+	    return year;
+    }
+
+    public String getTier() {
+	    return tier;
+    }
+
+    public void setTier(String tier) {
+	    this.tier = tier;
+    }
 }

@@ -260,9 +260,9 @@ public class GUI {
 					cbox_target2.setModel(new DefaultComboBoxModel(allGroupNames));
 					cbox_target3.setModel(new DefaultComboBoxModel(allGroupNames));
 					
-					cbox_target1.setSelectedItem(magicMachine.list.topTier.get(0).name);
-					cbox_target2.setSelectedItem(magicMachine.list.topTier.get(1).name);
-					cbox_target3.setSelectedItem(magicMachine.list.topTier.get(2).name);
+					cbox_target1.setSelectedItem(magicMachine.list.topTier.get(0).getName());
+					cbox_target2.setSelectedItem(magicMachine.list.topTier.get(1).getName());
+					cbox_target3.setSelectedItem(magicMachine.list.topTier.get(2).getName());
 										
 				}
 				else
@@ -316,7 +316,7 @@ public class GUI {
 					{
 						Group currentGroup = magicMachine.list.all.get(i);
 								
-						if (currentGroup.name.equalsIgnoreCase(groupName))
+						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
 							distinct = false;
 							break;
@@ -404,9 +404,9 @@ public class GUI {
 					{
 						Group currentGroup = magicMachine.list.all.get(j);
 						
-						if (currentGroup.name.equalsIgnoreCase(groupName))
+						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
-							if (currentGroup.tier.equalsIgnoreCase("T"))
+							if (currentGroup.getTier().equalsIgnoreCase("T"))
 							{
 								magicMachine.list.topTier.remove(currentGroup);
 								magicMachine.list.all.remove(currentGroup);

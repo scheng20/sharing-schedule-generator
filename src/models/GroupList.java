@@ -17,7 +17,7 @@ public class GroupList
 	{
 		all.add(newGroup);
 		
-		switch (newGroup.tier)
+		switch (newGroup.getTier())
 		{
 			case "T":
 				topTier.add(newGroup);
