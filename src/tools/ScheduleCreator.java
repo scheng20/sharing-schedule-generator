@@ -144,11 +144,11 @@ public class ScheduleCreator
 		{
 			// Find 1 top tier groups and 2 mid tier groups to share
 			
-			firstDay.addGroup(Groups.topTier.get(0));
+			firstDay.addGroup(Groups.getTopTier().get(0));
 			
-			for (int i = 0; i < Groups.midTier.size(); i++)
+			for (int i = 0; i < Groups.getMidTier().size(); i++)
 			{
-				Group current = Groups.midTier.get(i);
+				Group current = Groups.getMidTier().get(i);
 				
 				if (firstDay.canAdd(current))
 				{
@@ -166,12 +166,12 @@ public class ScheduleCreator
 				
 				if (currentDay.isHotDay())
 				{
-					currentDay.addGroup(Groups.topTier.get(1));
-					currentDay.addGroup(Groups.topTier.get(2));
+					currentDay.addGroup(Groups.getTopTier().get(1));
+					currentDay.addGroup(Groups.getTopTier().get(2));
 					
-					for (int j = 0; j < Groups.midTier.size(); j++)
+					for (int j = 0; j < Groups.getMidTier().size(); j++)
 					{
-						Group current = Groups.midTier.get(j);
+						Group current = Groups.getMidTier().get(j);
 						
 						if (currentDay.canAdd(current) && sufficientGap(current, schedule, i))
 						{
@@ -187,11 +187,11 @@ public class ScheduleCreator
 		else //if the first day is NOT a "hot" day
 		{
 			// Add 1 top tier group, and 1 mid tier group
-			firstDay.addGroup(Groups.topTier.get(0));
+			firstDay.addGroup(Groups.getTopTier().get(0));
 			
-			for (int i = 0; i < Groups.midTier.size(); i++)
+			for (int i = 0; i < Groups.getMidTier().size(); i++)
 			{
-				Group current = Groups.midTier.get(i);
+				Group current = Groups.getMidTier().get(i);
 				
 				if (firstDay.canAdd(current))
 				{
@@ -210,12 +210,12 @@ public class ScheduleCreator
 				
 				if (currentD.isHotDay())
 				{
-					currentD.addGroup(Groups.topTier.get(1));
-					currentD.addGroup(Groups.topTier.get(2));
+					currentD.addGroup(Groups.getTopTier().get(1));
+					currentD.addGroup(Groups.getTopTier().get(2));
 					
-					for (int j = 0; j < Groups.midTier.size(); j++)
+					for (int j = 0; j < Groups.getMidTier().size(); j++)
 					{
-						Group currentG = Groups.midTier.get(j);
+						Group currentG = Groups.getMidTier().get(j);
 						
 						// KEY THING HERE!!! TAKE IN ACCOUNT OF BOUNDARY ERROR
 
@@ -241,12 +241,12 @@ public class ScheduleCreator
 				
 				if (currentD.isHotDay())
 				{
-					currentD.addGroup(Groups.topTier.get(0));
-					currentD.addGroup(Groups.topTier.get(2));
+					currentD.addGroup(Groups.getTopTier().get(0));
+					currentD.addGroup(Groups.getTopTier().get(2));
 					
-					for (int j = 0; j < Groups.midTier.size(); j++)
+					for (int j = 0; j < Groups.getMidTier().size(); j++)
 					{
-						Group currentG = Groups.midTier.get(j);
+						Group currentG = Groups.getMidTier().get(j);
 						
 						if (currentD.canAdd(currentG) && sufficientGap(currentG, schedule, i))
 						{
@@ -267,9 +267,9 @@ public class ScheduleCreator
 		{
 			Day currentDay = schedule.get(i);
 			
-			for (int j = 0; j < Groups.all.size(); j++)
+			for (int j = 0; j < Groups.getAll().size(); j++)
 			{
-				Group currentGroup = Groups.all.get(j);
+				Group currentGroup = Groups.getAll().get(j);
 				
 				// ANOTHER KEY POINT TO WATCH OUT FOR HERE!!! Since the days start at 0, its impossible to look back
 				

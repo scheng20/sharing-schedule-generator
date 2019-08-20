@@ -112,9 +112,9 @@ public class Processor
 	public void compileStatsBefore()
 	{
 		// Calculate total number of shares needs to be shared
-		for (int i = 0; i < list.all.size(); i ++)
+		for (int i = 0; i < list.getAll().size(); i ++)
 		{
-			Group currentGroup = list.all.get(i);
+			Group currentGroup = list.getAll().get(i);
 							
 			totalToShare += currentGroup.shareTimes;
 		}
@@ -214,7 +214,7 @@ public class Processor
 		ArrayList<String> alist = new ArrayList<String>();
 		String[] result = {};
 		
-		Group currentGroup = list.all.get(row);
+		Group currentGroup = list.getAll().get(row);
 		alist.add(currentGroup.getName());
 		alist.add(currentGroup.getFaculty());
 		alist.add(currentGroup.getYear());
@@ -240,9 +240,9 @@ public class Processor
 		ArrayList<String> alist = new ArrayList<String>();
 		String[] result = {};
 		
-		for (int i = 0; i < list.all.size(); i ++)
+		for (int i = 0; i < list.getAll().size(); i ++)
 		{
-			Group currentGroup = list.all.get(i);
+			Group currentGroup = list.getAll().get(i);
 			alist.add(currentGroup.getName());
 		}
 		
@@ -255,35 +255,35 @@ public class Processor
 	// Resets the target groups
 	public void resetTargetGroups()
 	{
-		for (int i = 0; i < list.topTier.size(); i++)
+		for (int i = 0; i < list.getTopTier().size(); i++)
 		{
-			Group currentGroup = list.topTier.get(i);
+			Group currentGroup = list.getTopTier().get(i);
 			currentGroup.shareTimes = 1;
 			currentGroup.setTier("N");
-			list.midTier.add(currentGroup);
+			list.getMidTier().add(currentGroup);
 		}
 		
-		list.topTier.clear();
+		list.getTopTier().clear();
 	}
 	
 	
 	// Updates the new target groups
 	public void setTargetGroup(String GroupName)
 	{
-		for (int i = 0; i < list.all.size(); i++)
+		for (int i = 0; i < list.getAll().size(); i++)
 		{
-			Group currentGroup = list.all.get(i);
+			Group currentGroup = list.getAll().get(i);
 			
 			if (currentGroup.getName().equalsIgnoreCase(GroupName))
 			{
 				currentGroup.setTier("T");
 				currentGroup.shareTimes = 2;
-				list.topTier.add(currentGroup);
-				list.midTier.remove(currentGroup);
+				list.getTopTier().add(currentGroup);
+				list.getMidTier().remove(currentGroup);
 				
 				// This stuff reorganizes the list so there is no need for recompiling
-				list.all.remove(currentGroup);
-				list.all.add(0, currentGroup);
+				list.getAll().remove(currentGroup);
+				list.getAll().add(0, currentGroup);
 			}
 			
 		}

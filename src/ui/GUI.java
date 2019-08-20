@@ -247,7 +247,7 @@ public class GUI {
 					magicMachine.useBizTech2019_2020Preset = true;
 					magicMachine.loadPresets();
 					
-					for (int i = 0; i < magicMachine.list.all.size(); i++)
+					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 					{
 						String rowContent[] = magicMachine.getGroupData(i);
 						groupsTableModel.addRow(rowContent);
@@ -260,9 +260,9 @@ public class GUI {
 					cbox_target2.setModel(new DefaultComboBoxModel(allGroupNames));
 					cbox_target3.setModel(new DefaultComboBoxModel(allGroupNames));
 					
-					cbox_target1.setSelectedItem(magicMachine.list.topTier.get(0).getName());
-					cbox_target2.setSelectedItem(magicMachine.list.topTier.get(1).getName());
-					cbox_target3.setSelectedItem(magicMachine.list.topTier.get(2).getName());
+					cbox_target1.setSelectedItem(magicMachine.list.getTopTier().get(0).getName());
+					cbox_target2.setSelectedItem(magicMachine.list.getTopTier().get(1).getName());
+					cbox_target3.setSelectedItem(magicMachine.list.getTopTier().get(2).getName());
 										
 				}
 				else
@@ -312,9 +312,9 @@ public class GUI {
 				else
 				{
 					// Check if group name is distinct
-					for (int i = 0; i < magicMachine.list.all.size(); i++)
+					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 					{
-						Group currentGroup = magicMachine.list.all.get(i);
+						Group currentGroup = magicMachine.list.getAll().get(i);
 								
 						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
@@ -346,7 +346,7 @@ public class GUI {
 						// Refresh the group table!
 						groupsTableModel.setRowCount(0);
 							
-						for (int i = 0; i < magicMachine.list.all.size(); i++)
+						for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 						{
 							String rowContent[] = magicMachine.getGroupData(i);
 							groupsTableModel.addRow(rowContent);
@@ -400,21 +400,21 @@ public class GUI {
 					label_grouphelp.setForeground(new Color(44, 158, 42));
 					
 					// Find it in all the groups and delete it 
-					for (int j = 0; j < magicMachine.list.all.size(); j++)
+					for (int j = 0; j < magicMachine.list.getAll().size(); j++)
 					{
-						Group currentGroup = magicMachine.list.all.get(j);
+						Group currentGroup = magicMachine.list.getAll().get(j);
 						
 						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
 							if (currentGroup.getTier().equalsIgnoreCase("T"))
 							{
-								magicMachine.list.topTier.remove(currentGroup);
-								magicMachine.list.all.remove(currentGroup);
+								magicMachine.list.getTopTier().remove(currentGroup);
+								magicMachine.list.getAll().remove(currentGroup);
 							}
 							else
 							{
-								magicMachine.list.midTier.remove(currentGroup);
-								magicMachine.list.all.remove(currentGroup);
+								magicMachine.list.getMidTier().remove(currentGroup);
+								magicMachine.list.getAll().remove(currentGroup);
 							}
 						}
 					}
@@ -424,7 +424,7 @@ public class GUI {
 				// Reload the table
 				groupsTableModel.setRowCount(0);
 				
-				for (int i = 0; i < magicMachine.list.all.size(); i++)
+				for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 				{
 					String rowContent[] = magicMachine.getGroupData(i);
 					groupsTableModel.addRow(rowContent);
@@ -673,7 +673,7 @@ public class GUI {
 					label_help.setForeground(new Color(255, 58, 58));
 					label_help.setText("Please enter a date!");
 				}
-				else if (magicMachine.list.all.size() < 2)
+				else if (magicMachine.list.getAll().size() < 2)
 				{
 					label_help.setForeground(new Color(255, 58, 58));
 					label_help.setText("Please add at least 3 groups!");
@@ -708,9 +708,9 @@ public class GUI {
 					if (magicMachine.useBizTech2019_2020Preset)
 					{
 						// RESET SHARE TIMES!
-						for (int i = 0; i < magicMachine.list.all.size(); i++)
+						for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 						{
-							Group currentGroup = magicMachine.list.all.get(i);
+							Group currentGroup = magicMachine.list.getAll().get(i);
 							currentGroup.resetShareTimes();
 						}
 						//label_help.setText("A PRESET IS BEING USED!");
@@ -737,7 +737,7 @@ public class GUI {
 					// Update the group's table
 					groupsTableModel.setRowCount(0);
 					
-					for (int i = 0; i < magicMachine.list.all.size(); i++)
+					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
 					{
 						String rowContent[] = magicMachine.getGroupData(i);
 						groupsTableModel.addRow(rowContent);

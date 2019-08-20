@@ -4,15 +4,12 @@ import java.util.*;
 
 public class GroupList 
 {
-	public ArrayList<Group> all = new ArrayList<Group>();
-	public ArrayList<Group> topTier = new ArrayList<Group>();
-	public ArrayList<Group> midTier = new ArrayList<Group>();
-	
-	public GroupList()
-	{
-		
-	}
-	
+    // ------------------------------- FIELDS --------------------------------
+	private ArrayList<Group> all = new ArrayList<Group>();
+	private ArrayList<Group> topTier = new ArrayList<Group>();
+	private ArrayList<Group> midTier = new ArrayList<Group>();
+
+    // ------------------------------ FUNCTIONS ------------------------------
 	public void add(Group newGroup)
 	{
 		all.add(newGroup);
@@ -41,5 +38,20 @@ public class GroupList
 		topTier.clear();
 		midTier.clear();
 	}
-	
+
+    // ------------------------- GETTERS AND SETTERS -------------------------
+
+    public ArrayList<Group> getAll() {
+	    return all;
+    }
+
+    public ArrayList<Group> getTopTier() {
+        return topTier;
+    }
+
+    public ArrayList<Group> getMidTier() {
+        return midTier;
+    }
+
+
 }
