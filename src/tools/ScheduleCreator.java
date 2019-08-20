@@ -61,7 +61,7 @@ public class ScheduleCreator
 		{
 			Day currentDay = Week.get(i);
 			
-			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.sharedGroups;
+			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.getSharedGroups();
 			
 			if (sharedGroups.contains(currentGroupname))
 			{
@@ -87,7 +87,7 @@ public class ScheduleCreator
 		{
 			Day currentDay = Week.get(i);
 			
-			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.sharedGroups;
+			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.getSharedGroups();
 			
 			if (sharedGroups.contains(currentGroupname))
 			{
@@ -109,7 +109,7 @@ public class ScheduleCreator
 		Boolean result = false;
 		
 		Day pastDay = Week.get(dayCount - 1);
-		ArrayList<String> sharedGroups = (ArrayList<String>) pastDay.sharedGroups;
+		ArrayList<String> sharedGroups = (ArrayList<String>) pastDay.getSharedGroups();
 		
 		result = !sharedGroups.contains(currentGroupname);
 
@@ -122,7 +122,7 @@ public class ScheduleCreator
 		Boolean result = false;
 		
 		Day nextDay = Week.get(dayCount + 1);
-		ArrayList<String> sharedGroups = (ArrayList<String>) nextDay.sharedGroups;
+		ArrayList<String> sharedGroups = (ArrayList<String>) nextDay.getSharedGroups();
 		
 		result = !sharedGroups.contains(currentGroupname);
 
@@ -140,7 +140,7 @@ public class ScheduleCreator
 		Day firstDay = schedule.get(0);
 		
 		// If the first day is a "hot" day
-		if (firstDay.hotDay)
+		if (firstDay.isHotDay())
 		{
 			// Find 1 top tier groups and 2 mid tier groups to share
 			
@@ -164,7 +164,7 @@ public class ScheduleCreator
 			{
 				Day currentDay = schedule.get(i);
 				
-				if (currentDay.hotDay)
+				if (currentDay.isHotDay())
 				{
 					currentDay.addGroup(Groups.topTier.get(1));
 					currentDay.addGroup(Groups.topTier.get(2));
@@ -208,7 +208,7 @@ public class ScheduleCreator
 			{
 				Day currentD = schedule.get(i);
 				
-				if (currentD.hotDay)
+				if (currentD.isHotDay())
 				{
 					currentD.addGroup(Groups.topTier.get(1));
 					currentD.addGroup(Groups.topTier.get(2));
@@ -239,7 +239,7 @@ public class ScheduleCreator
 			{
 				Day currentD = schedule.get(i);
 				
-				if (currentD.hotDay)
+				if (currentD.isHotDay())
 				{
 					currentD.addGroup(Groups.topTier.get(0));
 					currentD.addGroup(Groups.topTier.get(2));

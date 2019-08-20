@@ -5,17 +5,19 @@ import java.util.*;
 
 public class Day 
 {
-	//Initialize Some Properties
-	public LocalDate date;
-	public String dayofWeek;
-	public Boolean hotDay = false;
-	public int shareSlots = 0;
-	public List<String> sharedGroups = new ArrayList<String>();
-	public List<String> sharedFaculties = new ArrayList<String>();
-	public List<String> sharedYears = new ArrayList<String>();
-	public List<Group> addedGroups = new ArrayList<Group>();
-	
-	//Constructor
+    // ------------------------------- FIELDS --------------------------------
+	private LocalDate date;
+	private String dayofWeek;
+	private Boolean hotDay = false;
+	private int shareSlots = 0;
+
+	private List<String> sharedGroups = new ArrayList<String>();
+	private List<String> sharedFaculties = new ArrayList<String>();
+	private List<String> sharedYears = new ArrayList<String>();
+
+	private List<Group> addedGroups = new ArrayList<Group>();
+
+    // ----------------------------- CONSTRUCTOR -----------------------------
 	public Day (LocalDate Date, Boolean Hot, int Slots)
 	{
 		date = Date;
@@ -23,18 +25,15 @@ public class Day
 		shareSlots = Slots;
 		dayofWeek = Date.getDayOfWeek().name();
 	}
-	
-	//Functions
+
+    // ------------------------------ FUNCTIONS ------------------------------
 	public void addGroup(Group group)
 	{
-		String groupName = group.name;
-		String groupFaculty = group.faculty;
-		String groupYear = group.year;
-		
+
 		addedGroups.add(group);
-		sharedGroups.add(groupName);
-		sharedFaculties.add(groupFaculty);
-		sharedYears.add(groupYear);
+		sharedGroups.add(group.name);
+		sharedFaculties.add(group.faculty);
+		sharedYears.add(group.year);
 		
 		// Decrease the amount of shares left for this day
 		shareSlots --;
@@ -45,52 +44,52 @@ public class Day
 	public boolean canAdd(Group group)
 	{
 		// Count how many appearances of this group's faculty are in this day
-		int sameFaculty = 0;
-		
-		String thisFaculty = group.faculty;
-		
-		for (int i = 0; i < sharedFaculties.size(); i ++)
-		{
-			String currentF = sharedFaculties.get(i);
-			
-			if (currentF.equalsIgnoreCase(thisFaculty))
-			{
-				sameFaculty ++;
-			}
-		}
+        int sameFaculty = countAppearances(group.faculty, sharedFaculties);
 		
 		// Count how many appearances of this group's year are in this day
-		int sameYear = 0;
+		int sameYear = countAppearances(group.year, sharedYears);
 		
-		String thisYear = group.year;
-		
-		for (int i = 0; i < sharedYears.size(); i ++)
-		{
-			String currentY = sharedYears.get(i);
-			
-			if (currentY.equalsIgnoreCase(thisYear))
-			{
-				sameYear ++;
-			}
-		}
-		
-		
-		if (shareSlots > 0 && sameFaculty < 2 && sameYear < 1 && group.shareTimes > 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	
+		return (shareSlots > 0 && sameFaculty < 2 && sameYear < 1 && group.shareTimes > 0);
 	}
-	
-	public void deleteAllGroups()
-	{
-		sharedGroups.clear();
-		sharedFaculties.clear();
-		sharedYears.clear();
-		addedGroups.clear();
-	}
+
+	public int countAppearances(String target, List<String> list) {
+
+	    int sameCount = 0;
+
+        for (String current: list)
+        {
+            if (current.equalsIgnoreCase(target))
+            {
+                sameCount ++;
+            }
+        }
+
+	    return sameCount;
+    }
+
+    public void deleteAllGroups()
+    {
+        sharedGroups.clear();
+        sharedFaculties.clear();
+        sharedYears.clear();
+        addedGroups.clear();
+    }
+
+    // ------------------------- GETTERS AND SETTERS -------------------------
+
+    public List<String> getSharedGroups() {
+	    return sharedGroups;
+    }
+
+    public int getShareSlots() {
+	    return shareSlots;
+    }
+
+    public boolean isHotDay() {
+	    return hotDay;
+    }
+
+    public LocalDate getDate() {
+	    return date;
+    }
 }

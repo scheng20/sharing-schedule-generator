@@ -124,7 +124,7 @@ public class Processor
 		{
 			Day currentDay = marketingWeek.get(i);
 							
-			totalSlots = totalSlots + currentDay.shareSlots;
+			totalSlots = totalSlots + currentDay.getShareSlots();
 		}
 	}
 	
@@ -135,7 +135,7 @@ public class Processor
 		{
 			Day currentDay = marketingWeek.get(i);
 			
-			actualShares = actualShares + currentDay.sharedGroups.size();
+			actualShares = actualShares + currentDay.getSharedGroups().size();
 		}
 	}
 	
@@ -154,7 +154,7 @@ public class Processor
 		for (int i = 0; i < marketingWeek.size(); i++)
 		{
 			Day currentDay = marketingWeek.get(i);
-			String currentDate = (currentDay.date).format(DateTimeFormatter.ofPattern("MMMM d"));
+			String currentDate = (currentDay.getDate()).format(DateTimeFormatter.ofPattern("MMMM d"));
 
 			list.add(currentDate);
 		}
@@ -172,7 +172,7 @@ public class Processor
 		for (int i = 0; i < marketingWeek.size(); i++)
 		{
 			Day currentDay = marketingWeek.get(i);
-			String currentDayofWeek = (currentDay.date).getDayOfWeek().name();
+			String currentDayofWeek = (currentDay.getDate()).getDayOfWeek().name();
 
 			list.add(currentDayofWeek);
 		}
@@ -192,9 +192,9 @@ public class Processor
 		{
 			Day currentDay = marketingWeek.get(i);
 			
-			if (!currentDay.sharedGroups.isEmpty() && (currentDay.sharedGroups.size() > row))
+			if (!currentDay.getSharedGroups().isEmpty() && (currentDay.getSharedGroups().size() > row))
 			{
-				String currentGroup = currentDay.sharedGroups.get(row);
+				String currentGroup = currentDay.getSharedGroups().get(row);
 				alist.add(currentGroup);
 			}
 			else
