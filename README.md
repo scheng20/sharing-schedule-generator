@@ -52,5 +52,5 @@ Additionally, there are several new features that I want to add in the future in
 ## :wave: More Questions?
 If you have any further questions or found any bugs to report, please feel free to contact me [here!](http://scheng.ca/#contact)
 
-## ::information_source: External Libraries
-JCalendar by Kai Tödter
+## :information_source: External Libraries
+* JCalendar by Kai Tödter
