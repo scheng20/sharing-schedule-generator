@@ -244,10 +244,10 @@ public class GUI {
 				if (chckbox_ubcpreset.isSelected())
 				{
 					// Creates data for the group table
-					magicMachine.useBizTech2019_2020Preset = true;
+					magicMachine.setUseBizTech2019_2020Preset(true);
 					magicMachine.loadPresets();
 					
-					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+					for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 					{
 						String rowContent[] = magicMachine.getGroupData(i);
 						groupsTableModel.addRow(rowContent);
@@ -260,14 +260,14 @@ public class GUI {
 					cbox_target2.setModel(new DefaultComboBoxModel(allGroupNames));
 					cbox_target3.setModel(new DefaultComboBoxModel(allGroupNames));
 					
-					cbox_target1.setSelectedItem(magicMachine.list.getTopTier().get(0).getName());
-					cbox_target2.setSelectedItem(magicMachine.list.getTopTier().get(1).getName());
-					cbox_target3.setSelectedItem(magicMachine.list.getTopTier().get(2).getName());
+					cbox_target1.setSelectedItem(magicMachine.getList().getTopTier().get(0).getName());
+					cbox_target2.setSelectedItem(magicMachine.getList().getTopTier().get(1).getName());
+					cbox_target3.setSelectedItem(magicMachine.getList().getTopTier().get(2).getName());
 										
 				}
 				else
 				{
-					magicMachine.list.deleteAll();
+					magicMachine.getList().deleteAll();
 					groupsTableModel.setRowCount(0);
 					
 					String[] empty = {};
@@ -312,9 +312,9 @@ public class GUI {
 				else
 				{
 					// Check if group name is distinct
-					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+					for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 					{
-						Group currentGroup = magicMachine.list.getAll().get(i);
+						Group currentGroup = magicMachine.getList().getAll().get(i);
 								
 						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
@@ -346,7 +346,7 @@ public class GUI {
 						// Refresh the group table!
 						groupsTableModel.setRowCount(0);
 							
-						for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+						for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 						{
 							String rowContent[] = magicMachine.getGroupData(i);
 							groupsTableModel.addRow(rowContent);
@@ -400,21 +400,21 @@ public class GUI {
 					label_grouphelp.setForeground(new Color(44, 158, 42));
 					
 					// Find it in all the groups and delete it 
-					for (int j = 0; j < magicMachine.list.getAll().size(); j++)
+					for (int j = 0; j < magicMachine.getList().getAll().size(); j++)
 					{
-						Group currentGroup = magicMachine.list.getAll().get(j);
+						Group currentGroup = magicMachine.getList().getAll().get(j);
 						
 						if (currentGroup.getName().equalsIgnoreCase(groupName))
 						{
 							if (currentGroup.getTier().equalsIgnoreCase("T"))
 							{
-								magicMachine.list.getTopTier().remove(currentGroup);
-								magicMachine.list.getAll().remove(currentGroup);
+								magicMachine.getList().getTopTier().remove(currentGroup);
+								magicMachine.getList().getAll().remove(currentGroup);
 							}
 							else
 							{
-								magicMachine.list.getMidTier().remove(currentGroup);
-								magicMachine.list.getAll().remove(currentGroup);
+								magicMachine.getList().getMidTier().remove(currentGroup);
+								magicMachine.getList().getAll().remove(currentGroup);
 							}
 						}
 					}
@@ -424,7 +424,7 @@ public class GUI {
 				// Reload the table
 				groupsTableModel.setRowCount(0);
 				
-				for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+				for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 				{
 					String rowContent[] = magicMachine.getGroupData(i);
 					groupsTableModel.addRow(rowContent);
@@ -659,8 +659,8 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) 
 			{
 				// Update the Event Name
-				magicMachine.eventName = txt_eventName.getText();
-				EventName.setText("Event Name: " + magicMachine.eventName);
+				magicMachine.setEventName(txt_eventName.getText());
+				EventName.setText("Event Name: " + magicMachine.getEventName());
 				
 				// Check if target groups are distinct!
 				String targetGroup1 = (String) cbox_target1.getSelectedItem();
@@ -673,7 +673,7 @@ public class GUI {
 					label_help.setForeground(new Color(255, 58, 58));
 					label_help.setText("Please enter a date!");
 				}
-				else if (magicMachine.list.getAll().size() < 2)
+				else if (magicMachine.getList().getAll().size() < 2)
 				{
 					label_help.setForeground(new Color(255, 58, 58));
 					label_help.setText("Please add at least 3 groups!");
@@ -696,21 +696,21 @@ public class GUI {
 					
 					//magicMachine.list.deleteAll(); OLD
 					
-					magicMachine.totalSlots = 0;
-					magicMachine.totalToShare = 0;
-					magicMachine.actualShares = 0;
+					magicMachine.setTotalSlots(0);
+					magicMachine.setTotalToShare(0);
+					magicMachine.setActualShares(0);
 					
 					// Update the Event Date
-					magicMachine.eventDate = dateChooser.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-					EventDate.setText("Event Date: " + magicMachine.eventDate.format(DateTimeFormatter.ofPattern("EEEE, MMMM d, YYYY")));
+					magicMachine.setEventDate(dateChooser.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+					EventDate.setText("Event Date: " + magicMachine.getEventDate().format(DateTimeFormatter.ofPattern("EEEE, MMMM d, YYYY")));
 					
 					// If there are presets used
-					if (magicMachine.useBizTech2019_2020Preset)
+					if (magicMachine.isUseBizTech2019_2020Preset())
 					{
 						// RESET SHARE TIMES!
-						for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+						for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 						{
-							Group currentGroup = magicMachine.list.getAll().get(i);
+							Group currentGroup = magicMachine.getList().getAll().get(i);
 							currentGroup.resetShareTimes();
 						}
 						//label_help.setText("A PRESET IS BEING USED!");
@@ -737,7 +737,7 @@ public class GUI {
 					// Update the group's table
 					groupsTableModel.setRowCount(0);
 					
-					for (int i = 0; i < magicMachine.list.getAll().size(); i++)
+					for (int i = 0; i < magicMachine.getList().getAll().size(); i++)
 					{
 						String rowContent[] = magicMachine.getGroupData(i);
 						groupsTableModel.addRow(rowContent);
@@ -750,7 +750,7 @@ public class GUI {
 					
 					// Fill the table with new Data
 					String[] Dates = magicMachine.getDates();
-					String[] DayofWeek = magicMachine.getDayofWeek();
+					String[] DayofWeek = magicMachine.getDayOfWeek();
 					
 					String[] G1 = magicMachine.getScheduleRow(0);
 					String[] G2 = magicMachine.getScheduleRow(1);
@@ -768,9 +768,9 @@ public class GUI {
 					scheduleTableModel.addRow(Filler);
 					
 					// Update the Schedule Statistics
-					Stat1.setText("Total number of times to be shared: " + magicMachine.totalToShare);
-					Stat2.setText("Total number of ACTUAL shares: " + magicMachine.actualShares);
-					Stat3.setText("Total number of slots this week: " + magicMachine.totalSlots);
+					Stat1.setText("Total number of times to be shared: " + magicMachine.getTotalToShare());
+					Stat2.setText("Total number of ACTUAL shares: " + magicMachine.getActualShares());
+					Stat3.setText("Total number of slots this week: " + magicMachine.getTotalSlots());
 					
 				}
 				

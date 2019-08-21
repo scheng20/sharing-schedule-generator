@@ -7,12 +7,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class WeekCreator 
-{	
-	//Constructor
-	public WeekCreator()
-	{
-	}
-	
+{
+    // ------------------------------ FUNCTIONS ------------------------------
+
 	// Based on the given date, generate an ArrayList of exactly
 	// 8 days (so 7 marketing days) prior to the event. Include
 	// all necessary information about the day (ex. if its a hot
@@ -36,16 +33,14 @@ public class WeekCreator
 			{
 				Day newDay = new Day(currentDate, true, 3);
 				week.add(newDay);
-			}
-			else
-			{
+
+			} else {
+
 				Day newDay = new Day(currentDate, false, 2);
 				week.add(newDay);
 			}
-			
 		}
-		
+
 		return week;
-		
 	}
 }

@@ -8,16 +8,10 @@ import java.util.ArrayList;
 
 public class ScheduleCreator 
 {
-	// Initialize some properties
-	public ArrayList<Day> schedule = new ArrayList<Day>();
-	
-	//Constructor
-	public ScheduleCreator()
-	{		
-		
-	}
-	
-	// Functions
+    // ------------------------------- FIELDS --------------------------------
+	private ArrayList<Day> schedule = new ArrayList<Day>();
+
+    // ------------------------------ FUNCTIONS ------------------------------
 	public boolean sufficientGap(Group group, ArrayList<Day> Week, int dayCount)
 	{
 		Boolean result = false;
@@ -54,7 +48,7 @@ public class ScheduleCreator
 	// Check if given group has been shared within the next 2 days
 	public Boolean CheckForwardTwo (Group group, ArrayList<Day> Week, int dayCount)
 	{
-		String currentGroupname = group.getName();
+		String currentGroupName = group.getName();
 		Boolean result = false;
 		
 		for (int i = dayCount; i <= (dayCount + 2); i++)
@@ -63,13 +57,10 @@ public class ScheduleCreator
 			
 			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.getSharedGroups();
 			
-			if (sharedGroups.contains(currentGroupname))
-			{
+			if (sharedGroups.contains(currentGroupName)) {
 				result = false;
 				break;
-			}
-			else
-			{
+			} else {
 				result = true;
 			}
 		}
@@ -89,49 +80,45 @@ public class ScheduleCreator
 			
 			ArrayList<String> sharedGroups = (ArrayList<String>) currentDay.getSharedGroups();
 			
-			if (sharedGroups.contains(currentGroupname))
-			{
+			if (sharedGroups.contains(currentGroupname)) {
 				result = false;
 				break;
-			}
-			else
-			{
+			} else {
 				result = true;
 			}
 		}
 		
 		return result;
 	}
-	
-	public Boolean CheckBackOne (Group group, ArrayList<Day> Week, int dayCount)
-	{
-		String currentGroupname = group.getName();
-		Boolean result = false;
-		
-		Day pastDay = Week.get(dayCount - 1);
-		ArrayList<String> sharedGroups = (ArrayList<String>) pastDay.getSharedGroups();
-		
-		result = !sharedGroups.contains(currentGroupname);
 
-		return result;
-	}
-	
-	public Boolean CheckForwardOne (Group group, ArrayList<Day> Week, int dayCount)
+    // Check whether or not the current group exists in the past day
+	public Boolean CheckBackOne (Group group, ArrayList<Day> week, int dayCount)
 	{
-		String currentGroupname = group.getName();
-		Boolean result = false;
-		
-		Day nextDay = Week.get(dayCount + 1);
-		ArrayList<String> sharedGroups = (ArrayList<String>) nextDay.getSharedGroups();
-		
-		result = !sharedGroups.contains(currentGroupname);
-
-		return result;
+		return CheckOneHelper(group, week, dayCount, dayCount - 1);
 	}
+
+    // Check whether or not the current group exists in the next day
+	public Boolean CheckForwardOne (Group group, ArrayList<Day> week, int dayCount)
+	{
+		return CheckOneHelper(group, week, dayCount, dayCount + 1);
+	}
+
+	// Checks whether or not the given group exists in the day indicated by the dayCursor
+	public boolean CheckOneHelper(Group group, ArrayList<Day> Week, int dayCount, int dayCursor) {
+
+        String currentGroupName = group.getName();
+        Boolean result = false;
+
+        Day dayCursorDay = Week.get(dayCursor);
+        ArrayList<String> sharedGroups = (ArrayList<String>) dayCursorDay.getSharedGroups();
+
+        result = !sharedGroups.contains(currentGroupName);
+
+        return result;
+    }
 	
-	
-	// Given a already scheduled week (list of days), and a list of groups
-	// schedule the groups into the given week.
+	// Given a already scheduled week (list of days), and a list of groups schedule the groups into
+    // the given week.
 	public ArrayList<Day> buildSchedule(ArrayList<Day> Week, GroupList Groups)
 	{
 		schedule = Week;
@@ -143,7 +130,6 @@ public class ScheduleCreator
 		if (firstDay.isHotDay())
 		{
 			// Find 1 top tier groups and 2 mid tier groups to share
-			
 			firstDay.addGroup(Groups.getTopTier().get(0));
 			
 			for (int i = 0; i < Groups.getMidTier().size(); i++)
@@ -279,10 +265,12 @@ public class ScheduleCreator
 				}
 			}
 		}
-		
 		return schedule;
-		
 	}
-		
 
+    // ------------------------- GETTERS AND SETTERS -------------------------
+
+    public ArrayList<Day> getSchedule() {
+	    return schedule;
+	}
 }

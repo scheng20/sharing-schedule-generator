@@ -18,8 +18,7 @@ public class Day
 	private List<Group> addedGroups = new ArrayList<Group>();
 
     // ----------------------------- CONSTRUCTOR -----------------------------
-	public Day (LocalDate Date, Boolean Hot, int Slots)
-	{
+	public Day (LocalDate Date, Boolean Hot, int Slots) {
 		date = Date;
 		hotDay = Hot;
 		shareSlots = Slots;
@@ -27,8 +26,7 @@ public class Day
 	}
 
     // ------------------------------ FUNCTIONS ------------------------------
-	public void addGroup(Group group)
-	{
+	public void addGroup(Group group) {
 
 		addedGroups.add(group);
 		sharedGroups.add(group.getName());
@@ -41,8 +39,7 @@ public class Day
 		
 	}
 	
-	public boolean canAdd(Group group)
-	{
+	public boolean canAdd(Group group) {
 		// Count how many appearances of this group's faculty are in this day
         int sameFaculty = countAppearances(group.getFaculty(), sharedFaculties);
 		
@@ -56,10 +53,8 @@ public class Day
 
 	    int sameCount = 0;
 
-        for (String current: list)
-        {
-            if (current.equalsIgnoreCase(target))
-            {
+        for (String current: list) {
+            if (current.equalsIgnoreCase(target)) {
                 sameCount ++;
             }
         }
@@ -67,8 +62,7 @@ public class Day
 	    return sameCount;
     }
 
-    public void deleteAllGroups()
-    {
+    public void deleteAllGroups() {
         sharedGroups.clear();
         sharedFaculties.clear();
         sharedYears.clear();

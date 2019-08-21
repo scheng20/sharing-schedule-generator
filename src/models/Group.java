@@ -11,16 +11,14 @@ public class Group
 	public int shareTimes = 0;
 
     // ----------------------------- CONSTRUCTOR -----------------------------
-	public Group (String Name, String Faculty, String Year, String Tier)
-	{
+	public Group (String Name, String Faculty, String Year, String Tier) {
 		name = Name;
 		faculty = Faculty;
 		tier = Tier;
 		year = Year;
 		
 		// MAX 2 TIMES SYSTEM:
-		switch (tier)
-		{
+		switch (tier) {
 			case "T":
 				shareTimes = 2;
 				break;
@@ -31,14 +29,10 @@ public class Group
 	}
 
     // ------------------------------ FUNCTIONS ------------------------------
-	public void resetShareTimes()
-	{
-		if (tier.equalsIgnoreCase("T"))
-		{
+	public void resetShareTimes() {
+		if (tier.equalsIgnoreCase("T")) {
 			shareTimes = 2;
-		}
-		else
-		{
+		} else {
 			shareTimes = 1;
 		}
 	}

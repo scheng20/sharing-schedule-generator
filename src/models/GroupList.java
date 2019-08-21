@@ -10,12 +10,10 @@ public class GroupList
 	private ArrayList<Group> midTier = new ArrayList<Group>();
 
     // ------------------------------ FUNCTIONS ------------------------------
-	public void add(Group newGroup)
-	{
+	public void add(Group newGroup) {
 		all.add(newGroup);
 		
-		switch (newGroup.getTier())
-		{
+		switch (newGroup.getTier()) {
 			case "T":
 				topTier.add(newGroup);
 				break;
@@ -25,15 +23,13 @@ public class GroupList
 		}
 	}
 	
-	public void compile()
-	{
+	public void compile() {
 		all.clear();
 		all.addAll(topTier);
 		all.addAll(midTier);
 	}
 	
-	public void deleteAll()
-	{
+	public void deleteAll() {
 		all.clear();
 		topTier.clear();
 		midTier.clear();
