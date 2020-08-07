@@ -9,10 +9,8 @@ Built using Java.
 [Download This Program Here](https://www.dropbox.com/s/uq6aao92wstuu13/SharingScheduleGenerator.exe?dl=0)
 
 ## :star: Introduction 
-Thank you for downloading and using this sharing schedule generator!
 
-This program is designed to be used as a marketing tool for advertising events on Facebook. One of the ways to maximize the exposure of your event is to share it across different Facebook groups. However, if you share your event too often within the same group, its group members may get annoyed and form a negative impression on your event. The goal of this program is 
-to automatically create a sharing schedule, so you can avoid oversharing and worrying about when to share your event and with which group. Even though this program was originally designed for advertising through Facebook, it can also be used for different platforms as long as the same logic applies (advertising your event to different groups of people). 
+This program is designed to be used as a marketing tool for advertising events on social media platforms such as Facebook. One of the ways to maximize the exposure of your event is to post (share) it in different Facebook groups (Ex. student groups such as UBC 2022 or UBC Science 2021). However, if you share your event too often within the same group, its group members may get annoyed and form a negative impression on your event. The goal of this program is to automatically create a sharing schedule, so you can avoid oversharing and effectively promote your event within different Facebook groups to ensure maximum exposure. 
 
 ## :pushpin: Features 
 * Automatically generates a 7-day marketing schedule detailing which groups you should share your event with on which day.
@@ -21,9 +19,10 @@ to automatically create a sharing schedule, so you can avoid oversharing and wor
 * Customizable groups, allowing you add and delete your own groups.
 
 * Built-in marketing strategies such as:
-    - Sufficient day gaps between sharing your event with the same group in order to avoid spamming and annoying group members.
-    - Customizable target groups, allowing you to maximize your event exposure with the people that you want your event to attract the most.
-    - More shares on days with more active users. 
+    - Automatically categorizes input groups into different demographics based on group name, faculty, and year level. 
+    - Schedules sufficient gaps between sharing your event with the same demographic in order to avoid spamming and annoying the same people. 
+    - Customizable target groups, allowing you to maximize your event's exposure with the people that your event is targeted towards. 
+    - Schedules more postings (aka sharing) on days with historically more active users. 
 
 * User-friendly interface and display.
 
