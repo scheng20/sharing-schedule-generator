@@ -2,9 +2,9 @@
 A marketing tool designed to help effectively share events with different groups on social media.
 Built using Java.
 
-<img src="screenshots/EventSettings1.PNG" width="280" title="Empty Event Settings"> <img src="screenshots/GroupSettings1.PNG" width="280" title="Empty Group Settings"> <img src="screenshots/Schedule1.PNG" width="280" title="Empty Schedule Output">
+<img src="screenshots/EventSettings1.PNG" width="275" title="Empty Event Settings"> <img src="screenshots/GroupSettings1.PNG" width="275" title="Empty Group Settings"> <img src="screenshots/Schedule1.PNG" width="275" title="Empty Schedule Output">
 
-<img src="screenshots/EventSettings2.PNG" width="280" title="Filled Event Settings"> <img src="screenshots/GroupSettings2.PNG" width="280" title="Filled Group Settings"> <img src="screenshots/Schedule2.PNG" width="280" title="Filled Schedule Output">
+<img src="screenshots/EventSettings2.PNG" width="275" title="Filled Event Settings"> <img src="screenshots/GroupSettings2.PNG" width="275" title="Filled Group Settings"> <img src="screenshots/Schedule2.PNG" width="275" title="Filled Schedule Output">
 
 [Download This Program Here](https://www.dropbox.com/s/uq6aao92wstuu13/SharingScheduleGenerator.exe?dl=0)
 
