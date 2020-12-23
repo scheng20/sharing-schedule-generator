@@ -12,6 +12,8 @@ Built using Java.
 
 This program is designed to be used as a marketing tool for advertising events on social media platforms such as Facebook. One of the ways to maximize the exposure of your event is to post (share) it in different Facebook groups (Ex. student groups such as UBC 2022 or UBC Science 2021). However, if you share your event too often within the same group, its group members may get annoyed and form a negative impression on your event. The goal of this program is to automatically create a sharing schedule, so you can avoid oversharing and effectively promote your event within different Facebook groups to ensure maximum exposure. 
 
+<img src="screenshots/Sharing%20Schedule%20Generator%20Demo.gif" width="800" title="Demo">
+
 ## :pushpin: Features 
 * Automatically generates a 7-day marketing schedule detailing which groups you should share your event with on which day.
     - Currently the program has a standard 7 days of marketing (prior to the event day). This time length is what we have found to be the most effective for our BizTech events.
