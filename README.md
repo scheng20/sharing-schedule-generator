@@ -1,4 +1,4 @@
-# Sharing Shedule Generator
+# Sharing Schedule Generator
 A marketing tool designed to help effectively share events with different groups on social media.
 Built using Java.
 
